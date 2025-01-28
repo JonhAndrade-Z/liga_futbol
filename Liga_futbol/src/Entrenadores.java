@@ -7,5 +7,6 @@ public class Entrenadores {
     public Entrenadores(String nombre, String formacionPreferida) {
         this.nombre = nombre;
         this.formacionPreferida = formacionPreferida;
+        System.out.println("Estamos dentro del constructor de Entrenadores");
     }
 }

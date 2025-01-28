@@ -7,5 +7,6 @@ public class Equipos {
 
         this.nombre = nombre;
         this.abreviatura = abreviatura;
+        System.out.println("Estamos dentro del constructor de Equipos");
     }
 }

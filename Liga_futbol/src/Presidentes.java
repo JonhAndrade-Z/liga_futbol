@@ -7,6 +7,7 @@ public class Presidentes {
 
         this.nombre = nombre;
         this.DNI = DNI;
+        System.out.println("estamos dentro del constructor de Presidentes");
 
     }
 
