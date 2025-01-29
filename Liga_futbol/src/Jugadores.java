@@ -6,10 +6,10 @@ public class Jugadores {
     private Date fechaNacimiento;
     private String paisOrigen;
     private int dorsal;
-    private Posicion Posicion;
-    privado Traspaso Traspaso;
+    private Posicion posicion;
+    private Traspaso traspaso;
 
-    public Jugadores(String nombre, int fechaNacimiento, String paisOrigen, int dorsal, Posicion Posicion,
+    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion,
             Traspaso traspaso) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -60,13 +60,12 @@ public class Jugadores {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    @Override
     public String toString() {
-        return "Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", numero=" + numero +
-                ", fechaNacimiento=" + fechaNacimiento +
-                '}';
+        return "Jugadores [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", paisOrigen=" + paisOrigen
+                + ", dorsal=" + dorsal + ", Posicion=" + posicion + ", Traspaso=" + traspaso + "]";
     }
+
+   
 
 }
