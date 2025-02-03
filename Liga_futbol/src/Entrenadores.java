@@ -9,4 +9,13 @@ public class Entrenadores {
         this.formacionPreferida = formacionPreferida;
         System.out.println("Estamos dentro del constructor de Entrenadores");
     }
+
+    public void setEquipo(Equipos equipo) {
+
+    }
+
+    public void getEquipo(Equipos equipo) {
+
+    }
+
 }

@@ -11,4 +11,12 @@ public class Presidentes {
 
     }
 
+    public void setEquipo(Equipos equipo) {
+
+    }
+
+    public void getEquipo(Equipos equipo) {
+
+    }
+
 }

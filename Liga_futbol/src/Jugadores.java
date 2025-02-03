@@ -6,10 +6,10 @@ public class Jugadores {
     private Date fechaNacimiento;
     private String paisOrigen;
     private int dorsal;
-    private Posicion Posicion;
-    privado Traspaso Traspaso;
+    private Posicion posicion;
+    private Traspaso traspaso;
 
-    public Jugadores(String nombre, int fechaNacimiento, String paisOrigen, int dorsal, Posicion Posicion,
+    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion,
             Traspaso traspaso) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -58,15 +58,6 @@ public class Jugadores {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String toString() {
-        return "Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", numero=" + numero +
-                ", fechaNacimiento=" + fechaNacimiento +
-                '}';
     }
 
 }
