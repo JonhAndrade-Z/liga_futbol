@@ -8,20 +8,17 @@ public class Jugadores {
     private int dorsal;
     private Posicion posicion;
     private Traspaso traspaso;
+    private Equipos equipos;
 
-    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion,
-            Traspaso traspaso) {
+    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.paisOrigen = paisOrigen;
         this.dorsal = dorsal;
         this.posicion = posicion;
-        this.traspaso = traspaso;
+        this.traspaso = Traspaso.SIN_SOLICITAR;
 
-        System.out.println("estamos dentro del constructor de jugadores");
-    }
-
-    public Jugadores(String string, int i, String string2, int j) {
+        // System.out.println("estamos dentro del constructor de jugadores");
     }
 
     public String getNombre() {
@@ -60,12 +57,16 @@ public class Jugadores {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    @Override
-    public String toString() {
-        return "Jugadores [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", paisOrigen=" + paisOrigen
-                + ", dorsal=" + dorsal + ", Posicion=" + posicion + ", Traspaso=" + traspaso + "]";
+    public void setEquipo(Equipos equipos) {
+        this.equipos = equipos;
     }
 
-   
+    public String toString() {
+        return "Jugadores [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", paisOrigen=" + paisOrigen
+                + ", dorsal=" + dorsal + ", posicion=" + posicion + ", traspaso=" + traspaso + ", equipos=" + equipos
+                + "]";
+    }
+
+    
 
 }
