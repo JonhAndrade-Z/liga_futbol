@@ -8,20 +8,23 @@ public class Jugadores {
     private int dorsal;
     private Posicion posicion;
     private Traspaso traspaso;
+<<<<<<< HEAD
 
     public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion,
             Traspaso traspaso) {
+=======
+    private Equipos equipos;
+
+    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion) {
+>>>>>>> 1b9848279c35a77837861312188879657be77a03
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.paisOrigen = paisOrigen;
         this.dorsal = dorsal;
         this.posicion = posicion;
-        this.traspaso = traspaso;
+        this.traspaso = Traspaso.SIN_SOLICITAR;
 
-        System.out.println("estamos dentro del constructor de jugadores");
-    }
-
-    public Jugadores(String string, int i, String string2, int j) {
+        // System.out.println("estamos dentro del constructor de jugadores");
     }
 
     public String getNombre() {
@@ -60,4 +63,19 @@ public class Jugadores {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+<<<<<<< HEAD
+=======
+    public void setEquipo(Equipos equipos) {
+        this.equipos = equipos;
+    }
+
+    public String toString() {
+        return "Jugadores [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", paisOrigen=" + paisOrigen
+                + ", dorsal=" + dorsal + ", posicion=" + posicion + ", traspaso=" + traspaso + ", equipos=" + equipos
+                + "]";
+    }
+
+    
+
+>>>>>>> 1b9848279c35a77837861312188879657be77a03
 }
