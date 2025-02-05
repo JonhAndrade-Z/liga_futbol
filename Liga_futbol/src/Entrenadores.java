@@ -41,11 +41,23 @@ public class Entrenadores {
         if (jugador.getEquipos().getNombre() == (this.equipos.getNombre())) {
 
             if (jugador.getTraspaso() == traspaso.SOLICITADO && jugador.getEquipos() == this.equipos) {
-                jugador.setTraspaso(traspaso.APROBADO_POR_ENTRENADOR );
-                System.out.println("El entrenador ha aceptado el traspaso de  " + jugador.getNombre());
+                jugador.setTraspaso(traspaso.APROBADO_POR_ENTRENADOR);
+                System.out.println("El entrenador " + nombre + " del equipo " + equipos.getNombre() + " ha aceptado el traspaso de  "
+                        + jugador.getNombre());
             } else {
+                // jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
+                // System.out.println("El entrenador ha rechazado la solicitud de " +
+                // jugador.getNombre());
+            }
+        }
+
+    }
+
+    public void rechazarTraspaso(Jugadores jugador) {
+        if (jugador.getEquipos().getNombre() == (this.equipos.getNombre())) {
+            if (jugador.getTraspaso() == traspaso.SOLICITADO) {
                 jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
-                System.out.println("El entrenador ha rechazado la solicitud de " + jugador.getNombre());
+                System.out.println("El entrenador " + nombre + " ha rechazado el traspaso");
             }
         }
     }

@@ -91,13 +91,22 @@ public class Jugadores {
     }
 
     public void solicitarTraspaso() {
-        if (traspaso == traspaso.SIN_SOLICITAR ) {
+        if (traspaso == traspaso.SIN_SOLICITAR) {
             traspaso = traspaso.SOLICITADO;
-            System.out.println("El jugador " + nombre + " ha solicitado el traspaso" );
+            System.out.println("El jugador " + nombre + " ha solicitado el traspaso");
         } else {
-           System.out.println("El jugador " + nombre + " ya ha solicitado el traspaso o no puede hacerlo");
+            System.out.println("El jugador " + nombre + " ya ha solicitado el traspaso");
         }
     }
 
+    // public void traspasoAprobado() {
+    //     if (traspaso == traspaso.APROBADO_POR_PRESIDENTE) {
+            
+    //         System.out.println("El traspaso de " + nombre + " ha sido aprobado por el entrenador");
+    //     } else {
+    //         System.out.println("El traspaso de " + nombre + " no ha sido aprobado por el entrenador");
+
+    //     }
+    // }
 
 }
