@@ -54,32 +54,4 @@ public class Presidentes {
         }
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(String dNI) {
-        DNI = dNI;
-    }
-
-    public void presidenteTraspaso(Jugadores jugador) {
-
-        if (jugador.getEquipos().getNombre() == (equipos.getNombre()))
-
-            if (jugador.getTraspaso() == traspaso.APROBADO_POR_ENTRENADOR) {
-                jugador.setTraspaso(traspaso.APROBADO_POR_PRESIDENTE);
-                System.out.println("El presidente ha aceptado el traspaso de " + jugador.getNombre());
-
-            }
-
-            else {
-                jugador.setTraspaso(traspaso.RECHAZADO_POR_PRESIDENTE);
-                System.out.println("El presidente ha rechazado la solicitud de " + jugador.getNombre());
-            }
-
-    }
 }

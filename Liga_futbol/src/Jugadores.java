@@ -56,13 +56,8 @@ public class Jugadores {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Equipos getEquipo() {
-        return equipos;
-    }
-
     public void setEquipo(Equipos equipos) {
         this.equipos = equipos;
-
     }
 
     public String toString() {
@@ -104,34 +99,4 @@ public class Jugadores {
         }
     }
 
-    public void setPosicion(Posicion posicion) {
-        this.posicion = posicion;
-    }
-
-    public Traspaso getTraspaso() {
-        return traspaso;
-    }
-
-    public void setTraspaso(Traspaso traspaso) {
-        this.traspaso = traspaso;
-    }
-
-    public void setEquipos(Equipos equipos) {
-        this.equipos = equipos;
-    }
-
-    public void solicitarTraspaso() {
-
-        if (traspaso == traspaso.SIN_SOLICITAR) {
-            traspaso = traspaso.SOLICITADO;
-            System.out.println("El jugador " + nombre + " ha solicitado el traspaso");
-
-        }
-
-        else {
-            System.out.println("El jugador " + nombre + " ya ha solicitado el traspaso o no puede hacerlo");
-
-        }
-
-    }
 }
