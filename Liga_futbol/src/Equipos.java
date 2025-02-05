@@ -14,8 +14,6 @@ public class Equipos {
         this.nombre = nombre;
         this.abreviatura = abreviatura;
         this.jugadores = new ArrayList<>();
-        // System.out.println("estamos en equipos");
-
     }
 
     public void setPresidentes(Presidentes presidentes) {
@@ -60,6 +58,7 @@ public class Equipos {
 
     }
 
+<<<<<<< HEAD
     public void anadirJugadores(Jugadores jugador) {
         this.jugadores.add(jugador);
         jugador.setEquipo(this);
@@ -94,5 +93,23 @@ public class Equipos {
             System.out.println("El traspaso no puede realizarse. Estado actual: " + jugador.getTraspaso());
         }
     }
+=======
+    public void seRealizaElTraspasoDelJugador(Jugadores jugador, Equipos nuevoEquipo) {
+
+        if (jugador.getTraspaso() == traspaso.APROBADO_POR_PRESIDENTE) {
+            this.jugadores.remove(jugador);
+
+            nuevoEquipo.anadirJugador(jugador);
+
+            jugador.setEquipos(nuevoEquipo);
+
+            jugador.setTraspaso(traspaso.SIN_SOLICITAR);
+
+            System.out.println("El traspaso de " + jugador.getNombre() + " se ha realizado con exito" + nuevoEquipo.getNombre());
+        }
+    }
+
+    
+>>>>>>> 2a6706670ed7a948c38c6f444e7189386fec233f
 
 }
