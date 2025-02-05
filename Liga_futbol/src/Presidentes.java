@@ -46,7 +46,8 @@ public class Presidentes {
 
             if (jugador.getTraspaso() == traspaso.APROBADO_POR_ENTRENADOR && jugador.getEquipos() == this.equipos) {
                 jugador.setTraspaso(traspaso.APROBADO_POR_PRESIDENTE);
-                System.out.println("El presidente ha aceptado el traspaso de  " + jugador.getNombre());
+                System.out.println("El presidente " + nombre + " del equipo " + equipos.getNombre()
+                        + " ha aceptado el traspaso de  " + jugador.getNombre());
             } else {
                 jugador.setTraspaso(traspaso.RECHAZADO_POR_PRESIDENTE);
                 System.out.println("El presidente ha rechazado la solicitud de " + jugador.getNombre());

@@ -70,7 +70,7 @@ public class Equipos {
             jugador.setTraspaso(traspaso.SIN_SOLICITAR);
 
             System.out.println(
-                    "El traspaso de " + jugador.getNombre() + " se ha realizado con exito" + nuevoEquipo.getNombre());
+                    "El traspaso de " + jugador.getNombre() + " se ha realizado con exito " + nuevoEquipo.getNombre());
         }
     }
 

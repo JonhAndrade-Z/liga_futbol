@@ -93,7 +93,8 @@ public class Jugadores {
     public void solicitarTraspaso() {
         if (traspaso == traspaso.SIN_SOLICITAR) {
             traspaso = traspaso.SOLICITADO;
-            System.out.println("El jugador " + nombre + " ha solicitado el traspaso");
+            System.out.println(
+                    "El jugador " + nombre + " del equipo " + equipos.getNombre() + " ha solicitado el traspaso");
         } else {
             System.out.println("El jugador " + nombre + " ya ha solicitado el traspaso o no puede hacerlo");
         }
