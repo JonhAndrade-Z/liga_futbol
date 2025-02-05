@@ -8,15 +8,9 @@ public class Jugadores {
     private int dorsal;
     private Posicion posicion;
     private Traspaso traspaso;
-<<<<<<< HEAD
-
-    public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion,
-            Traspaso traspaso) {
-=======
     private Equipos equipos;
 
     public Jugadores(String nombre, Date fechaNacimiento, String paisOrigen, int dorsal, Posicion posicion) {
->>>>>>> 1b9848279c35a77837861312188879657be77a03
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.paisOrigen = paisOrigen;
@@ -63,10 +57,13 @@ public class Jugadores {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-<<<<<<< HEAD
-=======
+    public Equipos getEquipo() {
+        return equipos;
+    }
+
     public void setEquipo(Equipos equipos) {
         this.equipos = equipos;
+
     }
 
     public String toString() {
@@ -75,7 +72,38 @@ public class Jugadores {
                 + "]";
     }
 
-    
+    public Posicion getPosicion() {
+        return posicion;
+    }
 
->>>>>>> 1b9848279c35a77837861312188879657be77a03
+    public void setPosicion(Posicion posicion) {
+        this.posicion = posicion;
+    }
+
+    public Traspaso getTraspaso() {
+        return traspaso;
+    }
+
+    public void setTraspaso(Traspaso traspaso) {
+        this.traspaso = traspaso;
+    }
+
+    public void setEquipos(Equipos equipos) {
+        this.equipos = equipos;
+    }
+
+    public void solicitarTraspaso() {
+
+        if (traspaso == traspaso.SIN_SOLICITAR) {
+            traspaso = traspaso.SOLICITADO;
+            System.out.println("El jugador " + nombre + " ha solicitado el traspaso");
+
+        }
+
+        else {
+            System.out.println("El jugador " + nombre + " ya ha solicitado el traspaso o no puede hacerlo");
+
+        }
+
+    }
 }

@@ -139,21 +139,40 @@ public class App {
 
                 ArrayList<Jugadores> jugadoress2 = new ArrayList<Jugadores>();
 
-                jugadoress.add(jugador5);
-                jugadoress.add(jugador6);
-                jugadoress.add(jugador7);
+                jugadoress2.add(jugador5);
+                jugadoress2.add(jugador6);
+                jugadoress2.add(jugador7);
 
                 ArrayList<Jugadores> jugadoress3 = new ArrayList<Jugadores>();
 
-                jugadoress.add(jugador8);
-                jugadoress.add(jugador9);
-                jugadoress.add(jugador10);
+                jugadoress3.add(jugador8);
+                jugadoress3.add(jugador9);
+                jugadoress3.add(jugador10);
 
                 equipo1.setJugadores(jugadoress);
                 equipo2.setJugadores(jugadoress2);
                 equipo3.setJugadores(jugadoress3);
 
-                System.out.println(jugador1.getNombre()); // print de un valor de un array
+                jugador1.solicitarTraspaso();
+                entrenador1.entrenadorTraspaso(jugador1);
+                Presidente1.presidenteTraspaso(jugador1);
+
+                // Imprimir equipo antes del traspaso
+                System.out.println(
+                                "Equipo actual de " + jugador1.getNombre() + ": " + jugador1.getEquipos().getNombre());
+
+                // Simular la solicitud y aprobación del traspaso
+                jugador1.solicitarTraspaso();
+                entrenador1.entrenadorTraspaso(jugador1);
+                Presidente1.presidenteTraspaso(jugador1);
+
+                // Realizar el traspaso (mover jugador1 de equipo1 a equipo2)
+                equipo1.realizarTraspaso(jugador1, equipo2);
+
+                // Imprimir equipo después del traspaso
+                System.out.println("Equipo después del traspaso de " + jugador1.getNombre() + ": "
+                                + jugador1.getEquipos().getNombre());
+
         }
 
 }
