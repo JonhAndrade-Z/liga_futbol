@@ -1,3 +1,4 @@
+package com;
 
 public class Entrenadores {
     private static int contadorEntrenadores = 0;
