@@ -5,7 +5,9 @@ import java.util.Date;
 public class App {
         public static void main(String[] args) throws Exception {
 
-                // fechas de nacimiento
+                /**
+                 * fechas de nacimiento para cada jugador
+                 */
 
                 Calendar cal = Calendar.getInstance();
 
@@ -38,23 +40,22 @@ public class App {
                 cal.set(1996, 11, 14);
                 Date date10 = cal.getTime();
 
+                /**
+                 * equipos con la ubicacion de los presidentes y
+                 * entrenadores
+                 */
+
                 Equipos equipo1 = new Equipos("valencia", "vlc");
                 Equipos equipo2 = new Equipos("madrid", "rmd");
                 Equipos equipo3 = new Equipos("barcelona", "bcl");
-
-                // System.out.println(String.toString(equipo1));
 
                 Presidentes Presidente1 = new Presidentes("florentino_perez", "79000000A");
                 Presidentes Presidente2 = new Presidentes("ramiro_fernandez", "78765411X");
                 Presidentes Presidente3 = new Presidentes("estefano_clase", "77777777J");
 
-                System.out.println(Presidente1);
-
                 Entrenadores entrenador1 = new Entrenadores("paco_perez", formacion._433);
                 Entrenadores entrenador2 = new Entrenadores("mike_litoris", formacion._442);
                 Entrenadores entrenador3 = new Entrenadores("lorenzo_garcia", formacion._523);
-
-                System.out.println(entrenador1);
 
                 Presidente1.setEquipo(equipo1);
                 equipo1.setPresidentes(Presidente1);
@@ -74,7 +75,11 @@ public class App {
                 entrenador3.setEquipo(equipo3);
                 equipo3.setEntrenadores(entrenador3);
 
-                //
+                /**
+                 * jugadores con la ubicacion dentro de un
+                 * equipo
+                 * y la anadicion de los jugadores a un equipo
+                 */
 
                 Jugadores jugador1 = new Jugadores("jonh_andrade", date1, "colombia", 17, Posicion.central);
 
@@ -126,9 +131,9 @@ public class App {
                 jugador10.setEquipo(equipo3);
                 equipo3.anadirJugador(jugador10);
 
-                // añadir un equipo a cada jugador
-
-                // el arraylist de jugadores
+                /**
+                 * almacena jugadores en el arrayList de jugadores
+                 */
 
                 ArrayList<Jugadores> jugadoress = new ArrayList<Jugadores>();
 
@@ -149,21 +154,42 @@ public class App {
                 jugadoress3.add(jugador9);
                 jugadoress3.add(jugador10);
 
-                // equipo1.setJugadores(jugadoress);
-                // equipo2.setJugadores(jugadoress2);
-                // equipo3.setJugadores(jugadoress3);
+                equipo1.setJugadores(jugadoress);
+                equipo2.setJugadores(jugadoress2);
+                equipo3.setJugadores(jugadoress3);
 
-                System.out.println("El equipo de " + jugador1.getNombre() + " es el: "
-                                + jugador1.getEquipos().getNombre());
+                /**
+                 * trasnferencias de jugadores entre equipos
+                 * con solicitudes de traspaso
+                 * y confirmaciones de los presidentes
+                 * y mas consultas
+                 */
 
-                jugador1.solicitarTraspaso();
-                entrenador1.entrenadorTraspaso(jugador1);
-                Presidente1.presidenteTraspaso(jugador1);
+                jugador2.solicitarTraspaso();
+                entrenador1.entrenadorTraspaso(jugador2);
+                Presidente1.presidenteTraspaso(jugador2);
 
-                equipo1.seRealizaElTraspasoDelJugador(jugador1, equipo2);
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
 
-                System.out.println(jugadoress.get(0).getNombre() + " ahora es del equipo: "
-                                + jugadoress.get(0).getEquipos().getNombre());
+                equipo1.realizarTraspaso(jugador2, equipo3);
+                
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
+                equipo1.realizarTraspaso(jugador2, equipo2);
+
+                jugador4.solicitarTraspaso();
+                entrenador1.entrenadorTraspaso(jugador4);
+                Presidente2.presidenteTraspaso(jugador4);
+                equipo3.realizarTraspaso(jugador4, equipo2);
+
+                System.out.println("Total de jugadores: " + Jugadores.getContadorJugadores());
+                System.out.println("Total de entrenadores: " + Entrenadores.getContadorEntrenadores());
+                System.out.println("Total de presidentes: " + Presidentes.getContadorPresidentes());
+                System.out.println("Total de equipos: " + Equipos.getContadorEquipos());
+                System.out.println("Número de jugadores en equipo1: " + equipo1.getJugadores().size());
+                System.out.println("Número de jugadores en equipo2: " + equipo2.getJugadores().size());
+                System.out.println("Número de jugadores en equipo3: " + equipo3.getJugadores().size());
 
         }
 
