@@ -1,6 +1,7 @@
 import java.util.Date;
 
 public class Jugadores {
+    private static int contadorJugadores = 0;
 
     private String nombre;
     private Date fechaNacimiento;
@@ -17,7 +18,12 @@ public class Jugadores {
         this.dorsal = dorsal;
         this.posicion = posicion;
         this.traspaso = Traspaso.SIN_SOLICITAR;
+        contadorJugadores++;
 
+    }
+
+    public static int getContadorJugadores() {
+        return contadorJugadores;
     }
 
     public String getNombre() {

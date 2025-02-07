@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Equipos {
 
+    private static int contadorEquipos = 0;
+
     private String nombre;
     public String abreviatura;
     private Presidentes presidentes;
@@ -14,6 +16,11 @@ public class Equipos {
         this.nombre = nombre;
         this.abreviatura = abreviatura;
         this.jugadores = new ArrayList<>();
+        contadorEquipos++;
+    }
+
+    public static int getContadorEquipos() {
+        return contadorEquipos;
     }
 
     public void setPresidentes(Presidentes presidentes) {

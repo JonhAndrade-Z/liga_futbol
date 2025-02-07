@@ -1,6 +1,6 @@
 
 public class Entrenadores {
-
+    private static int contadorEntrenadores = 0;
     public String nombre;
     public formacion formacionPreferida;
     private Traspaso traspaso;
@@ -9,7 +9,11 @@ public class Entrenadores {
     public Entrenadores(String nombre, formacion formacionPreferida) {
         this.nombre = nombre;
         this.formacionPreferida = formacionPreferida;
-        // System.out.println("estamos en entrenadores");
+        contadorEntrenadores++;
+    }
+
+    public static int getContadorEntrenadores() {
+        return contadorEntrenadores;
     }
 
     public void setEquipo(Equipos equipos) {
@@ -44,10 +48,9 @@ public class Entrenadores {
                 jugador.setTraspaso(traspaso.APROBADO_POR_ENTRENADOR);
                 System.out.println("El entrenador " + nombre + " del equipo " + equipos.getNombre()
                         + " ha aceptado el traspaso de  " + jugador.getNombre());
-                // } else {
-                // jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
-                // System.out.println("El entrenador ha rechazado la solicitud de " +
-                // jugador.getNombre());
+            } else {
+
+                System.out.println("El traspaso ya ha sido solicitado o no esta en estado solicitado.");
             }
         }
     }
@@ -58,6 +61,8 @@ public class Entrenadores {
                 jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
                 System.out.println("El entrenador " + nombre + " del equipo " + equipos.getNombre()
                         + "ha rechazado el traspaso de  " + jugador.getNombre());
+            } else {
+                System.out.println("El traspaso ya ha sido solicitado o no esta en estado solicitado.");
             }
         }
     }

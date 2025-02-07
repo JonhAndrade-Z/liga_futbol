@@ -1,4 +1,5 @@
 public class Presidentes {
+    private static int contadorPresidentes = 0;
 
     private String nombre;
     private String DNI;
@@ -10,6 +11,11 @@ public class Presidentes {
 
         this.nombre = nombre;
         this.DNI = DNI;
+        contadorPresidentes++;
+    }
+
+    public static int getContadorPresidentes() {
+        return contadorPresidentes;
     }
 
     public void setEquipo(Equipos equipo) {
@@ -51,6 +57,18 @@ public class Presidentes {
             } else {
                 jugador.setTraspaso(traspaso.RECHAZADO_POR_PRESIDENTE);
                 System.out.println("El presidente ha rechazado la solicitud de " + jugador.getNombre());
+            }
+        }
+    }
+
+    public void rechazarTraspaso(Jugadores jugador) {
+        if (jugador.getEquipos().getNombre() == this.equipos.getNombre()) {
+            if (jugador.getTraspaso() == traspaso.APROBADO_POR_ENTRENADOR && jugador.getEquipos() == this.equipos) {
+                jugador.setTraspaso(traspaso.RECHAZADO_POR_PRESIDENTE);
+                System.out.println("El presidente " + nombre + " del equipo " + equipos.getNombre()
+                        + "ha rechazado el traspaso de  " + jugador.getNombre());
+            } else {
+                System.out.println("El traspaso ha sido rechazado por el entrenador.");
             }
         }
     }

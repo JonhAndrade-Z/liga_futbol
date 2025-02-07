@@ -42,8 +42,6 @@ public class App {
                 Equipos equipo2 = new Equipos("madrid", "rmd");
                 Equipos equipo3 = new Equipos("barcelona", "bcl");
 
-                // System.out.println(String.toString(equipo1));
-
                 Presidentes Presidente1 = new Presidentes("florentino_perez", "79000000A");
                 Presidentes Presidente2 = new Presidentes("ramiro_fernandez", "78765411X");
                 Presidentes Presidente3 = new Presidentes("estefano_clase", "77777777J");
@@ -121,7 +119,7 @@ public class App {
                 jugador9.setEquipo(equipo3);
                 equipo3.anadirJugador(jugador9);
 
-                Jugadores jugador10 = new Jugadores("dani_carbajal", date10, "espanya", 64, Posicion.portero);
+                Jugadores jugador10 = new Jugadores("dani_carvajal", date10, "espanya", 64, Posicion.portero);
 
                 jugador10.setEquipo(equipo3);
                 equipo3.anadirJugador(jugador10);
@@ -157,14 +155,30 @@ public class App {
                 entrenador1.entrenadorTraspaso(jugador2);
                 Presidente1.presidenteTraspaso(jugador2);
 
-                System.out.println(jugador2.getNombre() + ":" + jugador2.getEquipos().getNombre());
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
 
                 equipo1.seRealizaElTraspasoDelJugador(jugador2, equipo3);
 
-                System.out.println(jugador2.getNombre() + ":" + jugador2.getEquipos().getNombre());
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
 
-                // System.out.println(jugadoress2.get(3).getNombre() + ":" +
-                // jugadoress2.get(0).getEquipos().getNombre());
+                jugador2.solicitarTraspaso();
+                entrenador3.entrenadorTraspaso(jugador2);
+                Presidente3.presidenteTraspaso(jugador2);
+
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
+
+                equipo1.seRealizaElTraspasoDelJugador(jugador2, equipo2);
+
+                System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
+                                + jugador2.getEquipos().getNombre());
+
+                System.out.println("Total de jugadores: " + Jugadores.getContadorJugadores());
+                System.out.println("Total de entrenadores: " + Entrenadores.getContadorEntrenadores());
+                System.out.println("Total de presidentes: " + Presidentes.getContadorPresidentes());
+                System.out.println("Total de equipos: " + Equipos.getContadorEquipos());
 
         }
 
