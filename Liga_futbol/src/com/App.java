@@ -77,8 +77,7 @@ public class App {
                 equipo3.setEntrenadores(entrenador3);
 
                 /**
-                 * jugadores con la ubicacion dentro de un
-                 * equipo
+                 * jugadores con la ubicacion dentro de un equipo
                  * y la anadicion de los jugadores a un equipo
                  */
 
