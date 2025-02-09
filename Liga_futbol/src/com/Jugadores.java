@@ -1,5 +1,10 @@
 package com;
+
 import java.util.Date;
+
+/**
+ * Clase que representa a un jugador de futbol.
+ */
 
 public class Jugadores {
     private static int contadorJugadores = 0;

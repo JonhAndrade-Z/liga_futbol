@@ -1,5 +1,10 @@
 package com;
+
 import java.util.ArrayList;
+
+/**
+ * Clase que representa a un equipo de futbol.
+ */
 
 public class Equipos {
 
@@ -118,12 +123,10 @@ public class Equipos {
     }
 
     /**
-     * @param jugador
-     * @param equipoDestino
-     *                      se crea la condicion aplicable para la
-     *                      aprobacion del traspaso por parte del presidente
-     * @return
-     *         se retorna el traspaso aprobado o rechazado
+     * Realiza el traspaso de un jugador a otro equipo.
+     * 
+     * @param jugador       El jugador a traspasar.
+     * @param equipoDestino El equipo de destino del jugador.
      */
 
     public void realizarTraspaso(Jugadores jugador, Equipos equipoDestino) {
