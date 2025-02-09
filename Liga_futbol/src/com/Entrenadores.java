@@ -1,5 +1,8 @@
 package com;
 
+/**
+ * Clase que representa a un entrenador de un equipo de futbol.
+ */
 public class Entrenadores {
     private static int contadorEntrenadores = 0;
     public String nombre;
@@ -78,13 +81,9 @@ public class Entrenadores {
     }
 
     /**
-     * @param jugador
-     *                se recibe el jugador que solicita el traspaso
-     *                se crea la condicon aplicacble para la
-     *                aprobacion del traspaso por parte del entrenador
+     * Realiza la aprobacion o rechazo del traspaso de un jugador.
      * 
-     * @return
-     *         se retorna el traspaso aprobado o rechazado
+     * @param jugador El jugador que solicita el traspaso.
      */
     public void entrenadorTraspaso(Jugadores jugador) {
 

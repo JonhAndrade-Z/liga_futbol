@@ -1,7 +1,10 @@
 package com;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+/** Clase principal de la aplicacion. */
 
 public class App {
         public static void main(String[] args) throws Exception {
@@ -173,7 +176,7 @@ public class App {
                                 + jugador2.getEquipos().getNombre());
 
                 equipo1.realizarTraspaso(jugador2, equipo3);
-                
+
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
                                 + jugador2.getEquipos().getNombre());
                 equipo1.realizarTraspaso(jugador2, equipo2);

@@ -1,4 +1,8 @@
 package com;
+
+/**
+ * Clase que representa a los presidentes de los equipos de futbol.
+ */
 public class Presidentes {
 
     private static int contadorPresidentes = 0;
@@ -34,7 +38,7 @@ public class Presidentes {
     /**
      * Obtiene el equipo del presidente.
      * 
-     * @param equipo El equipo del presidente.
+     * @return El equipo del presidente.
      */
     public Equipos getEquipo() {
         return equipos;
@@ -79,7 +83,7 @@ public class Presidentes {
     /**
      * Establece el DNI del presidente.
      * 
-     * @param DNI El DNI del presidente.
+     * @param dNI El DNI del presidente.
      */
     public void setDNI(String dNI) {
         DNI = dNI;
