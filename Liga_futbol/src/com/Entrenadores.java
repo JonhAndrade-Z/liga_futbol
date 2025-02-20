@@ -1,11 +1,13 @@
 package com;
 
+import java.util.Date;
+
 /**
  * Clase que representa a un entrenador de un equipo de futbol.
  */
-public class Entrenadores {
+public class Entrenadores extends Trabajadores {
     private static int contadorEntrenadores = 0;
-    public String nombre;
+    // public String nombre;
     public formacion formacionPreferida;
     private Traspaso traspaso;
     private Equipos equipos;
@@ -16,13 +18,20 @@ public class Entrenadores {
      * @param nombre             El nombre del entrenador.
      * @param formacionPreferida La formación preferida del entrenador.
      */
+    // public Entrenadores(String nombre, formacion formacionPreferida) {
+    // this.nombre = nombre;
+    // this.formacionPreferida = formacionPreferida;
+    // contadorEntrenadores++;
+    // }
+
     public Entrenadores(String nombre, formacion formacionPreferida) {
-        this.nombre = nombre;
+        super(nombre);
         this.formacionPreferida = formacionPreferida;
         contadorEntrenadores++;
     }
 
-    /**
+
+    /**F
      * Establece el equipo del entrenador.
      * 
      * @param equipos El equipo del entrenador.

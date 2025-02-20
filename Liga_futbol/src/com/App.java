@@ -193,7 +193,6 @@ public class App {
                 System.out.println("Número de jugadores en equipo1: " + equipo1.getJugadores().size());
                 System.out.println("Número de jugadores en equipo2: " + equipo2.getJugadores().size());
                 System.out.println("Número de jugadores en equipo3: " + equipo3.getJugadores().size());
-
         }
 
 }
