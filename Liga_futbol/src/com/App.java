@@ -172,7 +172,9 @@ public class App {
                 entrenador1.aprobarTraspaso(jugador2);
                 // he cambiado el  entrenador traspaso por aprobarTraspaso
                 // Esto no esta probado, no se ni sirve o funciona
-                Presidente1.presidenteTraspaso(jugador2);
+                Presidente1.aprobarTraspaso(jugador2);
+                   // he cambiado el  presidenteTraspaso  por aprobarTraspaso
+                // Esto no esta probado, no se ni funciona bien
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
                                 + jugador2.getEquipos().getNombre());
@@ -186,8 +188,10 @@ public class App {
                 jugador4.solicitarTraspaso();
                 entrenador1.aprobarTraspaso(jugador4);
                 // he cambiado el  entrenador traspaso por aprobarTraspaso
-                // Esto no esta probado, no se ni sirve o funciona
-                Presidente2.presidenteTraspaso(jugador4);
+                // Esto no esta probado, no se si funciona bien
+                Presidente2.rechazarTraspaso(jugador4);
+                 // he cambiado el  presidenteTraspaso  por rechazarTraspaso
+                // Esto no esta probado, no se si funciona bien
                 equipo3.realizarTraspaso(jugador4, equipo2);
 
                 System.out.println("Total de jugadores: " + Jugadores.getContadorJugadores());
