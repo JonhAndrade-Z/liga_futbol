@@ -169,7 +169,9 @@ public class App {
                  */
 
                 jugador2.solicitarTraspaso();
-                entrenador1.entrenadorTraspaso(jugador2);
+                entrenador1.aprobarTraspaso(jugador2);
+                // he cambiado el  entrenador traspaso por aprobarTraspaso
+                // Esto no esta probado, no se ni sirve o funciona
                 Presidente1.presidenteTraspaso(jugador2);
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
@@ -182,7 +184,9 @@ public class App {
                 equipo1.realizarTraspaso(jugador2, equipo2);
 
                 jugador4.solicitarTraspaso();
-                entrenador1.entrenadorTraspaso(jugador4);
+                entrenador1.aprobarTraspaso(jugador4);
+                // he cambiado el  entrenador traspaso por aprobarTraspaso
+                // Esto no esta probado, no se ni sirve o funciona
                 Presidente2.presidenteTraspaso(jugador4);
                 equipo3.realizarTraspaso(jugador4, equipo2);
 

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Clase que representa a un entrenador de un equipo de futbol.
  */
-public class Entrenadores extends Trabajadores {
+public class Entrenadores extends Trabajadores implements GestorTraspasos {
     private static int contadorEntrenadores = 0;
     // public String nombre;
     public formacion formacionPreferida;
@@ -30,8 +30,8 @@ public class Entrenadores extends Trabajadores {
         contadorEntrenadores++;
     }
 
-
-    /**F
+    /**
+     * F
      * Establece el equipo del entrenador.
      * 
      * @param equipos El equipo del entrenador.
@@ -94,7 +94,7 @@ public class Entrenadores extends Trabajadores {
      * 
      * @param jugador El jugador que solicita el traspaso.
      */
-    public void entrenadorTraspaso(Jugadores jugador) {
+    public void aprobarTraspaso(Jugadores jugador) {
 
         if (jugador.getEquipos().getNombre() == (this.equipos.getNombre())) {
 
@@ -104,12 +104,14 @@ public class Entrenadores extends Trabajadores {
                         + " ha aceptado el traspaso de  "
                         + jugador.getNombre() + "\n");
             }
-        } else {
-            if (jugador.getEquipos().getNombre() != (this.equipos.getNombre())) {
-                if (jugador.getTraspaso() == traspaso.SOLICITADO) {
-                    jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
-                    System.out.println("El entrenador " + nombre + " ha rechazado el traspaso \n");
-                }
+        }
+    }
+
+    public void rechazarTraspaso(Jugadores jugador) {
+        if (jugador.getEquipos().getNombre() != (this.equipos.getNombre())) {
+            if (jugador.getTraspaso() == traspaso.SOLICITADO) {
+                jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
+                System.out.println("El entrenador " + nombre + " ha rechazado el traspaso \n");
             }
         }
 
