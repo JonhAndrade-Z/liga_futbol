@@ -142,7 +142,7 @@ public class Equipos {
 
                 this.anadirJugador(jugador);
 
-                jugador.setEquipos(equipoDestino);
+                jugador.setEquipo(equipoDestino);
 
                 jugador.setTraspaso(traspaso.SIN_SOLICITAR);
 

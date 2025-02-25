@@ -25,6 +25,10 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
     // this.DNI = DNI;
     // contadorPresidentes++;
     // }
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Trabajador: Presidente");
+    }
 
     public Presidentes(String nombre, String DNI) {
 

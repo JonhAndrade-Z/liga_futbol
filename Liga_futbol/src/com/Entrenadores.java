@@ -3,172 +3,127 @@ package com;
 import java.util.Date;
 
 /**
- * Clase que representa a un entrenador de un equipo de futbol.
+ * Clase que representa a un entrenador de un equipo de fútbol.
  */
 public class Entrenadores extends Trabajadores implements GestorTraspasos {
     private static int contadorEntrenadores = 0;
-    // public String nombre;
-    public formacion formacionPreferida;
+    private formacion formacionPreferida;
     private Traspaso traspaso;
-    private Equipos equipos;
+    private Equipos equipo;
 
     /**
      * Constructor para crear un nuevo entrenador.
-     * 
+     *
      * @param nombre             El nombre del entrenador.
+     * @param fechaNacimiento    La fecha de nacimiento del entrenador.
+     * @param paisOrigen         El país de origen del entrenador.
      * @param formacionPreferida La formación preferida del entrenador.
      */
-    // public Entrenadores(String nombre, formacion formacionPreferida) {
-    // this.nombre = nombre;
-    // this.formacionPreferida = formacionPreferida;
-    // contadorEntrenadores++;
-    // }
-
     public Entrenadores(String nombre, formacion formacionPreferida) {
         super(nombre);
         this.formacionPreferida = formacionPreferida;
+        this.traspaso = Traspaso.SIN_SOLICITAR;
         contadorEntrenadores++;
     }
 
     /**
-     * F
+     * Muestra los datos básicos del entrenador.
+     */
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Trabajador: Entrenador");
+        System.out.println("Formación preferida: " + formacionPreferida);
+        if (equipo != null) {
+            System.out.println("Equipo: " + equipo.getNombre());
+        }
+    }
+
+    /**
      * Establece el equipo del entrenador.
-     * 
-     * @param equipos El equipo del entrenador.
+     *
+     * @param equipo El equipo asignado al entrenador.
      */
-
-    public void setEquipo(Equipos equipos) {
-        this.equipos = equipos;
+    public void setEquipo(Equipos equipo) {
+        this.equipo = equipo;
     }
 
     /**
-     * Devuelve una representación en cadena del entrenador.
-     * 
-     * @return Una cadena que representa al entrenador.
+     * Obtiene el equipo del entrenador.
+     *
+     * @return El equipo asignado al entrenador.
      */
+    public Equipos getEquipo() {
+        return equipo;
+    }
+
+    /**
+     * Aprueba el traspaso de un jugador si pertenece al mismo equipo.
+     *
+     * @param jugador El jugador que solicita el traspaso.
+     */
+    public void aprobarTraspaso(Jugadores jugador) {
+        if (jugador.getEquipos() != null && equipo != null &&
+                jugador.getEquipos().getNombre().equals(equipo.getNombre()) &&
+                jugador.getTraspaso() == Traspaso.SOLICITADO) {
+
+            jugador.setTraspaso(Traspaso.APROBADO_POR_ENTRENADOR);
+            System.out.println("El entrenador " + getNombre() + " del equipo " + equipo.getNombre()
+                    + " ha aprobado el traspaso de " + jugador.getNombre() + ".");
+        } else {
+            System.out.println("El traspaso no puede ser aprobado.");
+        }
+    }
+
+    /**
+     * Rechaza el traspaso de un jugador si pertenece a un equipo distinto.
+     *
+     * @param jugador El jugador que solicita el traspaso.
+     */
+    public void rechazarTraspaso(Jugadores jugador) {
+        if (jugador.getTraspaso() == Traspaso.SOLICITADO) {
+            jugador.setTraspaso(Traspaso.RECHAZADO_POR_ENTRENADOR);
+            System.out.println("El entrenador " + getNombre() + " ha rechazado el traspaso de "
+                    + jugador.getNombre() + ".");
+        } else {
+            System.out.println("No se puede rechazar un traspaso no solicitado.");
+        }
+    }
+
+    /**
+     * entrenador en string
+     */
+
     public String toString() {
-        return "Entrenadores [nombre=" + nombre + ", formacionPreferida=" + formacionPreferida + "]";
-    }
-
-    /**
-     * Obtiene el nombre del entrenador.
-     * 
-     * @return El nombre del entrenador.
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Establece el nombre del entrenador.
-     * 
-     * @param nombre El nombre del entrenador.
-     */
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+        return "Entrenadores [nombre=" + getNombre() +
+                ", formacionPreferida=" + formacionPreferida +
+                (equipo != null ? ", equipo=" + equipo.getNombre() : "") + "]";
     }
 
     /**
      * Obtiene la formación preferida del entrenador.
-     * 
-     * @return La formación preferida del entrenador.
      */
-
     public formacion getFormacionPreferida() {
         return formacionPreferida;
     }
 
     /**
      * Establece la formación preferida del entrenador.
-     * 
-     * @param formacionPreferida La formación preferida del entrenador.
      */
-
     public void setFormacionPreferida(formacion formacionPreferida) {
         this.formacionPreferida = formacionPreferida;
     }
 
     /**
-     * Realiza la aprobacion o rechazo del traspaso de un jugador.
-     * 
-     * @param jugador El jugador que solicita el traspaso.
-     */
-    public void aprobarTraspaso(Jugadores jugador) {
-
-        if (jugador.getEquipos().getNombre() == (this.equipos.getNombre())) {
-
-            if (jugador.getTraspaso() == traspaso.SOLICITADO && jugador.getEquipos() == this.equipos) {
-                jugador.setTraspaso(traspaso.APROBADO_POR_ENTRENADOR);
-                System.out.println("El entrenador " + nombre + " del equipo " + equipos.getNombre()
-                        + " ha aceptado el traspaso de  "
-                        + jugador.getNombre() + "\n");
-            }
-        }
-    }
-
-    public void rechazarTraspaso(Jugadores jugador) {
-        if (jugador.getEquipos().getNombre() != (this.equipos.getNombre())) {
-            if (jugador.getTraspaso() == traspaso.SOLICITADO) {
-                jugador.setTraspaso(traspaso.RECHAZADO_POR_ENTRENADOR);
-                System.out.println("El entrenador " + nombre + " ha rechazado el traspaso \n");
-            }
-        }
-
-    }
-
-    /**
      * Obtiene el contador de entrenadores.
-     * 
-     * @return El contador de entrenadores.
      */
     public static int getContadorEntrenadores() {
         return contadorEntrenadores;
     }
 
     /**
-     * Establece el contador de entrenadores.
-     * 
-     * @param contadorEntrenadores El contador de entrenadores.
+     * contador de entrenadores
      */
     public static void setContadorEntrenadores(int contadorEntrenadores) {
         Entrenadores.contadorEntrenadores = contadorEntrenadores;
     }
-
-    /**
-     * Obtiene el estado de traspaso del entrenador.
-     * 
-     * @return El estado de traspaso del entrenador.
-     */
-    public Traspaso getTraspaso() {
-        return traspaso;
-    }
-
-    /**
-     * Establece el estado de traspaso del entrenador.
-     * 
-     * @param traspaso El estado de traspaso del entrenador.
-     */
-    public void setTraspaso(Traspaso traspaso) {
-        this.traspaso = traspaso;
-    }
-
-    /**
-     * Obtiene el equipo del entrenador.
-     * 
-     * @return El equipo del entrenador.
-     */
-    public Equipos getEquipos() {
-        return equipos;
-    }
-
-    /**
-     * Establece el equipo del entrenador.
-     * 
-     * @param equipos El equipo del entrenador.
-     */
-    public void setEquipos(Equipos equipos) {
-        this.equipos = equipos;
-    }
-
 }

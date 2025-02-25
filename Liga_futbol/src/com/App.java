@@ -170,10 +170,10 @@ public class App {
 
                 jugador2.solicitarTraspaso();
                 entrenador1.aprobarTraspaso(jugador2);
-                // he cambiado el  entrenador traspaso por aprobarTraspaso
+                // he cambiado el entrenador traspaso por aprobarTraspaso
                 // Esto no esta probado, no se ni sirve o funciona
                 Presidente1.aprobarTraspaso(jugador2);
-                   // he cambiado el  presidenteTraspaso  por aprobarTraspaso
+                // he cambiado el presidenteTraspaso por aprobarTraspaso
                 // Esto no esta probado, no se ni funciona bien
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
@@ -187,10 +187,10 @@ public class App {
 
                 jugador4.solicitarTraspaso();
                 entrenador1.aprobarTraspaso(jugador4);
-                // he cambiado el  entrenador traspaso por aprobarTraspaso
+                // he cambiado el entrenador traspaso por aprobarTraspaso
                 // Esto no esta probado, no se si funciona bien
                 Presidente2.rechazarTraspaso(jugador4);
-                 // he cambiado el  presidenteTraspaso  por rechazarTraspaso
+                // he cambiado el presidenteTraspaso por rechazarTraspaso
                 // Esto no esta probado, no se si funciona bien
                 equipo3.realizarTraspaso(jugador4, equipo2);
 
@@ -201,6 +201,13 @@ public class App {
                 System.out.println("Número de jugadores en equipo1: " + equipo1.getJugadores().size());
                 System.out.println("Número de jugadores en equipo2: " + equipo2.getJugadores().size());
                 System.out.println("Número de jugadores en equipo3: " + equipo3.getJugadores().size());
+
+                // Jugadores jugador = new Jugadores("Leo Messi", new Date(), "Argentina", 10,
+                // Posicion.medioCentro);
+                // jugador.mostrarDatos();
+                // prueba
+
+                System.out.println("Contador de jugadores: " + Jugadores.getContadorJugadores());
         }
 
 }
