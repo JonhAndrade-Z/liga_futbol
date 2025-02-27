@@ -35,10 +35,9 @@ public class Jugadores extends Trabajadores {
      */
 
     public void mostrarDatos() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Trabajador: Jugador");
-        System.out.println("Dorsal: " + dorsal);
-        System.out.println("Posición: " + posicion);
+        System.out.println("_-----------------------------------_");
+        System.out.println("Nombre: " + nombre + "\n" +  "Trabajador: Jugador" + "\n" +  "Dorsal: " + dorsal + "\n" + "Posición: " + posicion);
+ 
     }
 
     // getters setters

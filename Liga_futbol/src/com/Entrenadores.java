@@ -1,7 +1,5 @@
 package com;
 
-import java.util.Date;
-
 /**
  * Clase que representa a un entrenador de un equipo de fútbol.
  */
@@ -30,9 +28,8 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
      * Muestra los datos básicos del entrenador.
      */
     public void mostrarDatos() {
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Trabajador: Entrenador");
-        System.out.println("Formación preferida: " + formacionPreferida);
+        System.out.println("_-----------------------------------_");
+        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Entrenador" + "\n" + "Formación preferida: " + formacionPreferida);
         if (equipo != null) {
             System.out.println("Equipo: " + equipo.getNombre());
         }
@@ -90,7 +87,7 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
     }
 
     /**
-     * entrenador en string
+     * Entrenador en string
      */
 
     public String toString() {
@@ -121,7 +118,7 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
     }
 
     /**
-     * contador de entrenadores
+     * Contador de entrenadores
      */
     public static void setContadorEntrenadores(int contadorEntrenadores) {
         Entrenadores.contadorEntrenadores = contadorEntrenadores;

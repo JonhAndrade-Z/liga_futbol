@@ -7,7 +7,6 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
 
     private static int contadorPresidentes = 0;
 
-    // private String nombre;
     private String DNI;
     private Traspaso traspaso;
     private Equipos equipos;
@@ -19,16 +18,13 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
      * @param nombre El nombre del presidente.
      * @param DNI    El DNI del presidente.
      */
-    // public Presidentes(String nombre, String DNI) {
-
-    // this.nombre = nombre;
-    // this.DNI = DNI;
-    // contadorPresidentes++;
-    // }
     public void mostrarDatos() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Trabajador: Presidente");
-    }
+        System.out.println("_-----------------------------------_");
+        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Presidente" );
+
+        if (getEquipo() != null) {
+            System.out.println("Equipo: " + getEquipo().getNombre());
+        }    }
 
     public Presidentes(String nombre, String DNI) {
 
@@ -105,30 +101,7 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
      * 
      * @param jugador El jugador que solicita el traspaso.
      */
-    // public void presidenteTraspaso(Jugadores jugador) {
-
-    // if (jugador.getEquipos().getNombre().equals(equipos.getNombre())) {
-
-    // if (jugador.getTraspaso() == traspaso.APROBADO_POR_ENTRENADOR &&
-    // jugador.getEquipos() == this.equipos) {
-    // jugador.setTraspaso(traspaso.APROBADO_POR_PRESIDENTE);
-    // System.out.println("El presidente " + nombre + " del equipo " +
-    // equipos.getNombre()
-    // + " ha aceptado el traspaso de " + jugador.getNombre() + " \n");
-    // } else {
-    // jugador.setTraspaso(traspaso.RECHAZADO_POR_PRESIDENTE);
-    // System.out.println("El presidente ha rechazado la solicitud de " +
-    // jugador.getNombre() + "\n");
-    // }
-    // } else {
-    // System.out.println(
-    // "El presidente " + nombre + " no es el presidente del equipo de " +
-    // jugador.getNombre() + "\n");
-
-    // }
-    // //nos toca modificar esto, de arriba
-    // }
-
+ 
     public void aprobarTraspaso(Jugadores jugador) {
         if (jugador.getEquipos() == this.equipos && jugador.getTraspaso() == Traspaso.APROBADO_POR_ENTRENADOR) {
             jugador.setTraspaso(Traspaso.APROBADO_POR_PRESIDENTE);

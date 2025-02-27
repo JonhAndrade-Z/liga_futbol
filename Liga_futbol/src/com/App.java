@@ -170,11 +170,7 @@ public class App {
 
                 jugador2.solicitarTraspaso();
                 entrenador1.aprobarTraspaso(jugador2);
-                // he cambiado el entrenador traspaso por aprobarTraspaso
-                // Esto no esta probado, no se ni sirve o funciona
                 Presidente1.aprobarTraspaso(jugador2);
-                // he cambiado el presidenteTraspaso por aprobarTraspaso
-                // Esto no esta probado, no se ni funciona bien
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
                                 + jugador2.getEquipos().getNombre());
@@ -187,11 +183,8 @@ public class App {
 
                 jugador4.solicitarTraspaso();
                 entrenador1.aprobarTraspaso(jugador4);
-                // he cambiado el entrenador traspaso por aprobarTraspaso
-                // Esto no esta probado, no se si funciona bien
                 Presidente2.rechazarTraspaso(jugador4);
-                // he cambiado el presidenteTraspaso por rechazarTraspaso
-                // Esto no esta probado, no se si funciona bien
+
                 equipo3.realizarTraspaso(jugador4, equipo2);
 
                 System.out.println("Total de jugadores: " + Jugadores.getContadorJugadores());
@@ -202,12 +195,24 @@ public class App {
                 System.out.println("Número de jugadores en equipo2: " + equipo2.getJugadores().size());
                 System.out.println("Número de jugadores en equipo3: " + equipo3.getJugadores().size());
 
-                // Jugadores jugador = new Jugadores("Leo Messi", new Date(), "Argentina", 10,
-                // Posicion.medioCentro);
-                // jugador.mostrarDatos();
-                // prueba
-
                 System.out.println("Contador de jugadores: " + Jugadores.getContadorJugadores());
+
+                // Informacion de los entrenadores
+                entrenador1.mostrarDatos();
+                entrenador2.mostrarDatos();
+                entrenador3.mostrarDatos();
+                // Informacion de los presidentes
+                Presidente1.mostrarDatos();
+                Presidente2.mostrarDatos();
+                Presidente3.mostrarDatos();
+                // Informacion de los jugadores como trabajadores
+                jugador1.mostrarDatos();
+                jugador5.mostrarDatos();
+                jugador10.mostrarDatos();
+
+                // Comprobante de la nacionalida entre jugadores
+                jugador2.mismaNacionalidad(jugador7);
+                jugador5.mismaNacionalidad(jugador10);
         }
 
 }

@@ -36,13 +36,16 @@ public abstract class Trabajadores {
         this.nombre = nombre;
     }
 
-    public String mismaNacionalidad(Trabajadores trabajador) {
+    public void mismaNacionalidad(Trabajadores trabajador) {
         if (trabajador != null && this.paisOrigen != null && this.paisOrigen.equals(trabajador.paisOrigen)) {
-            return "Tienen la misma nacionalidad";
+            System.out.println("_-----------------------------------_");
+            System.out.println("El jugador " + getNombre() + " Tiene la misma nacionalidad que " + trabajador.getNombre());
         } else {
-            return "No tienen la misma nacionalidad";
+            System.out.println("_-----------------------------------_");
+            System.out.println("El jugador " + getNombre() + " No tienen la misma nacionalidad " + trabajador.getNombre());
         }
     }
 
     public abstract void mostrarDatos();
+
 }
