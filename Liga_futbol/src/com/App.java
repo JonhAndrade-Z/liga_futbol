@@ -1,3 +1,9 @@
+/**
+ * @author Javier Guerrero
+ * @author Jonh Andrade
+ * @version p5.v1.0.0-omega
+ * 
+ */
 package com;
 
 import java.util.ArrayList;
@@ -187,7 +193,7 @@ public class App {
                 Presidente2.rechazarTraspaso(jugador4);
 
                 equipo3.realizarTraspaso(jugador4, equipo2);
-                
+
                 /**
                  * Contadores generales
                  */
