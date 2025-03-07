@@ -18,6 +18,13 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
      * @param nombre El nombre del presidente.
      * @param DNI    El DNI del presidente.
      */
+    
+    public Presidentes(String nombre, String DNI) {
+        
+        super(nombre);
+        this.DNI = DNI;
+        contadorPresidentes++;
+    }
     public void mostrarDatos() {
         System.out.println("_-----------------------------------_");
         System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Presidente" );
@@ -25,13 +32,6 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
         if (getEquipo() != null) {
             System.out.println("Equipo: " + getEquipo().getNombre());
         }    }
-
-    public Presidentes(String nombre, String DNI) {
-
-        super(nombre);
-        this.DNI = DNI;
-        contadorPresidentes++;
-    }
 
     /**
      * Establece el equipo del presidente.

@@ -3,7 +3,7 @@ package com;
 /**
  * Enum que representa las formaciones tacticas en el futbol.
  */
-public enum formacion {
+public enum Formacion {
 
     /** Formacion 4-4-2. */
     _442,

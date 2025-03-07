@@ -5,7 +5,7 @@ package com;
  */
 public class Entrenadores extends Trabajadores implements GestorTraspasos {
     private static int contadorEntrenadores = 0;
-    private formacion formacionPreferida;
+    private Formacion formacionPreferida;
     private Traspaso traspaso;
     private Equipos equipo;
 
@@ -17,7 +17,7 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
      * @param paisOrigen         El país de origen del entrenador.
      * @param formacionPreferida La formación preferida del entrenador.
      */
-    public Entrenadores(String nombre, formacion formacionPreferida) {
+    public Entrenadores(String nombre, Formacion formacionPreferida) {
         super(nombre);
         this.formacionPreferida = formacionPreferida;
         this.traspaso = Traspaso.SIN_SOLICITAR;
@@ -32,6 +32,8 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
         System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Entrenador" + "\n" + "Formación preferida: " + formacionPreferida);
         if (equipo != null) {
             System.out.println("Equipo: " + equipo.getNombre());
+        } else {
+            System.out.println("Sin equipo asignado.");
         }
     }
 
@@ -99,14 +101,14 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
     /**
      * Obtiene la formación preferida del entrenador.
      */
-    public formacion getFormacionPreferida() {
+    public Formacion getFormacionPreferida() {
         return formacionPreferida;
     }
 
     /**
      * Establece la formación preferida del entrenador.
      */
-    public void setFormacionPreferida(formacion formacionPreferida) {
+    public void setFormacionPreferida(Formacion formacionPreferida) {
         this.formacionPreferida = formacionPreferida;
     }
 
