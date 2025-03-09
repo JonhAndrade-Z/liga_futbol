@@ -18,20 +18,22 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
      * @param nombre El nombre del presidente.
      * @param DNI    El DNI del presidente.
      */
-    
+
     public Presidentes(String nombre, String DNI) {
-        
+
         super(nombre);
         this.DNI = DNI;
         contadorPresidentes++;
     }
+
     public void mostrarDatos() {
         System.out.println("_-----------------------------------_");
-        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Presidente" );
+        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Presidente");
 
         if (getEquipo() != null) {
             System.out.println("Equipo: " + getEquipo().getNombre());
-        }    }
+        }
+    }
 
     /**
      * Establece el equipo del presidente.
@@ -101,12 +103,26 @@ public class Presidentes extends Trabajadores implements GestorTraspasos {
      * 
      * @param jugador El jugador que solicita el traspaso.
      */
- 
+
+    // public void aprobarTraspaso(Jugadores jugador) {
+    //     if (jugador.getEquipos() == this.equipos && jugador.getTraspaso() == Traspaso.APROBADO_POR_ENTRENADOR) {
+    //         jugador.setTraspaso(Traspaso.APROBADO_POR_PRESIDENTE);
+    //         System.out.println("El presidente " + nombre + " ha aprobado el traspaso de " + jugador.getNombre());
+    //     }
+    // }
+
     public void aprobarTraspaso(Jugadores jugador) {
-        if (jugador.getEquipos() == this.equipos && jugador.getTraspaso() == Traspaso.APROBADO_POR_ENTRENADOR) {
-            jugador.setTraspaso(Traspaso.APROBADO_POR_PRESIDENTE);
-            System.out.println("El presidente " + nombre + " ha aprobado el traspaso de " + jugador.getNombre());
+        if (jugador.getEquipos() != equipos) {
+            System.out.println("");
+            return;
         }
+        if (jugador.getTraspaso() != Traspaso.APROBADO_POR_ENTRENADOR) {
+            System.out.println("");
+            return;
+        }
+        jugador.setTraspaso(Traspaso.APROBADO_POR_ENTRENADOR);
+        System.out.println("El presidente " + nombre + " ha aprobado el traspaso de " + jugador.getNombre());
+
     }
 
     public void rechazarTraspaso(Jugadores jugador) {

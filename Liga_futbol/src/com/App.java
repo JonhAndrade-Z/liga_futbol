@@ -192,6 +192,8 @@ public class App {
                 entrenador1.aprobarTraspaso(jugador4);
                 Presidente2.rechazarTraspaso(jugador4);
 
+                //comprobacion de equipo erroneo
+                //para un traspaso
                 equipo3.realizarTraspaso(jugador4, equipo2);
 
                 /**

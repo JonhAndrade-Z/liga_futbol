@@ -29,7 +29,8 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
      */
     public void mostrarDatos() {
         System.out.println("_-----------------------------------_");
-        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Entrenador" + "\n" + "Formación preferida: " + formacionPreferida);
+        System.out.println("Nombre: " + getNombre() + "\n" + "Trabajador: Entrenador" + "\n" + "Formación preferida: "
+                + formacionPreferida);
         if (equipo != null) {
             System.out.println("Equipo: " + equipo.getNombre());
         } else {
@@ -60,17 +61,35 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
      *
      * @param jugador El jugador que solicita el traspaso.
      */
-    public void aprobarTraspaso(Jugadores jugador) {
-        if (jugador.getEquipos() != null && equipo != null &&
-                jugador.getEquipos().getNombre().equals(equipo.getNombre()) &&
-                jugador.getTraspaso() == Traspaso.SOLICITADO) {
+    // public void aprobarTraspaso(Jugadores jugador) {
+    // if (jugador.getEquipos() != null && equipo != null &&
+    // jugador.getEquipos().getNombre().equals(equipo.getNombre()) &&
+    // jugador.getTraspaso() == Traspaso.SOLICITADO) {
 
-            jugador.setTraspaso(Traspaso.APROBADO_POR_ENTRENADOR);
-            System.out.println("El entrenador " + getNombre() + " del equipo " + equipo.getNombre()
-                    + " ha aprobado el traspaso de " + jugador.getNombre() + ".");
-        } else {
-            System.out.println("El traspaso no puede ser aprobado.");
+    // jugador.setTraspaso(Traspaso.APROBADO_POR_ENTRENADOR);
+    // System.out.println("El entrenador " + getNombre() + " del equipo " +
+    // equipo.getNombre()
+    // + " ha aprobado el traspaso de " + jugador.getNombre() + ".");
+    // } else {
+    // System.out.println("El traspaso no puede ser aprobado.");
+    // }
+    // }
+
+    public void aprobarTraspaso(Jugadores jugador) {
+        if (jugador.getEquipos() == null || equipo == null) {
+            System.out.println("No se puede aprobar el traspaso. El entrenador o el jugador no tienen equipo asignado.");            return;
         }
+        if (jugador.getEquipos() != equipo) {
+            System.out.println("El traspaso no puede ser aprobado porque el jugador no pertenece al equipo del entrenador.");
+            return;
+        }
+        if (jugador.getTraspaso() != traspaso.SOLICITADO) {
+            System.out.println("El traspaso no puede ser aprobado porque no ha sido solicitado.");
+            return;
+        }
+        jugador.setTraspaso(Traspaso.APROBADO_POR_ENTRENADOR);
+        System.out.println("El entrenador " + getNombre() + " del equipo " + equipo.getNombre()
+                + " ha aprobado el traspaso de " + jugador.getNombre() + ".");
     }
 
     /**
