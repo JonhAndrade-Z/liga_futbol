@@ -1,3 +1,9 @@
+/**
+ * @author Javier Guerrero
+ * @author Jonh Andrade
+ * @version p6.v2.0.0-Beta
+ * 
+ */
 package com;
 
 import java.util.ArrayList;
@@ -7,6 +13,12 @@ import java.util.Date;
 /** Clase principal de la aplicacion. */
 
 public class App {
+        /**
+         * Metodo principal de la aplicacion
+         * 
+         * @param args Argumentos de la linea de comandos
+         * @throws Exception Excepcion en caso de error
+         */
         public static void main(String[] args) throws Exception {
 
                 /**
@@ -169,8 +181,8 @@ public class App {
                  */
 
                 jugador2.solicitarTraspaso();
-                entrenador1.entrenadorTraspaso(jugador2);
-                Presidente1.presidenteTraspaso(jugador2);
+                entrenador1.aprobarTraspaso(jugador2);
+                Presidente1.aprobarTraspaso(jugador2);
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
                                 + jugador2.getEquipos().getNombre());
@@ -179,12 +191,20 @@ public class App {
 
                 System.out.println("El jugador " + jugador2.getNombre() + " pertenece al equipo: "
                                 + jugador2.getEquipos().getNombre());
+
                 equipo1.realizarTraspaso(jugador2, equipo2);
 
                 jugador4.solicitarTraspaso();
-                entrenador1.entrenadorTraspaso(jugador4);
-                Presidente2.presidenteTraspaso(jugador4);
+                entrenador1.aprobarTraspaso(jugador4);
+                Presidente2.rechazarTraspaso(jugador4);
+
+                //comprobacion de equipo erroneo
+                //para un traspaso
                 equipo3.realizarTraspaso(jugador4, equipo2);
+
+                /**
+                 * Contadores generales
+                 */
 
                 System.out.println("Total de jugadores: " + Jugadores.getContadorJugadores());
                 System.out.println("Total de entrenadores: " + Entrenadores.getContadorEntrenadores());
@@ -193,7 +213,34 @@ public class App {
                 System.out.println("Número de jugadores en equipo1: " + equipo1.getJugadores().size());
                 System.out.println("Número de jugadores en equipo2: " + equipo2.getJugadores().size());
                 System.out.println("Número de jugadores en equipo3: " + equipo3.getJugadores().size());
+                System.out.println("Contador de jugadores: " + Jugadores.getContadorJugadores());
 
+                /**
+                 * Informacion de los trabajadores
+                 * (entrenadores, presidentes, jugadores)
+                 */
+
+                // Informacion de los entrenadores
+                entrenador1.mostrarDatos();
+                entrenador2.mostrarDatos();
+                entrenador3.mostrarDatos();
+                // Informacion de los presidentes
+                Presidente1.mostrarDatos();
+                Presidente2.mostrarDatos();
+                Presidente3.mostrarDatos();
+                // Informacion de los jugadores como trabajadores
+                jugador1.mostrarDatos();
+                jugador5.mostrarDatos();
+                jugador10.mostrarDatos();
+
+                /**
+                 * Comprobancion sobre la nacionalidad
+                 * de los jugadores verificando su
+                 * similitud
+                 */
+
+                // Comprobante de la nacionalida entre jugadores
+                jugador2.mismaNacionalidad(jugador7);
+                jugador5.mismaNacionalidad(jugador10);
         }
-
 }

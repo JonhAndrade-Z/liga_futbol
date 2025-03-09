@@ -142,7 +142,7 @@ public class Equipos {
 
                 this.anadirJugador(jugador);
 
-                jugador.setEquipos(equipoDestino);
+                jugador.setEquipo(equipoDestino);
 
                 jugador.setTraspaso(traspaso.SIN_SOLICITAR);
 
@@ -166,6 +166,7 @@ public class Equipos {
      * 
      * @return El contador de equipos.
      */
+
     public static int getContadorEquipos() {
         return contadorEquipos;
     }
@@ -175,6 +176,7 @@ public class Equipos {
      * 
      * @return El estado de traspaso del equipo.
      */
+
     public Traspaso getTraspaso() {
         return traspaso;
     }
