@@ -1,7 +1,7 @@
 /**
  * @author Javier Guerrero
  * @author Jonh Andrade
- * @version p5.v1.0.0-omega
+ * @version p6.v2.0.0-Beta
  * 
  */
 package com;
