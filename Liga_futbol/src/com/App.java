@@ -13,6 +13,12 @@ import java.util.Date;
 /** Clase principal de la aplicacion. */
 
 public class App {
+        /**
+         * Metodo principal de la aplicacion
+         * 
+         * @param args Argumentos de la linea de comandos
+         * @throws Exception Excepcion en caso de error
+         */
         public static void main(String[] args) throws Exception {
 
                 /**
@@ -63,9 +69,9 @@ public class App {
                 Presidentes Presidente2 = new Presidentes("ramiro_fernandez", "78765411X");
                 Presidentes Presidente3 = new Presidentes("estefano_clase", "77777777J");
 
-                Entrenadores entrenador1 = new Entrenadores("paco_perez", Formacion._433);
-                Entrenadores entrenador2 = new Entrenadores("mike_litoris", Formacion._442);
-                Entrenadores entrenador3 = new Entrenadores("lorenzo_garcia", Formacion._523);
+                Entrenadores entrenador1 = new Entrenadores("paco_perez", formacion._433);
+                Entrenadores entrenador2 = new Entrenadores("mike_litoris", formacion._442);
+                Entrenadores entrenador3 = new Entrenadores("lorenzo_garcia", formacion._523);
 
                 Presidente1.setEquipo(equipo1);
                 equipo1.setPresidentes(Presidente1);

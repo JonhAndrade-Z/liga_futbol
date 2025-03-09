@@ -176,7 +176,7 @@ public class Equipos {
      * 
      * @return El estado de traspaso del equipo.
      */
-    
+
     public Traspaso getTraspaso() {
         return traspaso;
     }

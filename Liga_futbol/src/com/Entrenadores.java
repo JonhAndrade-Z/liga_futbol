@@ -5,7 +5,7 @@ package com;
  */
 public class Entrenadores extends Trabajadores implements GestorTraspasos {
     private static int contadorEntrenadores = 0;
-    private Formacion formacionPreferida;
+    private formacion formacionPreferida;
     private Traspaso traspaso;
     private Equipos equipo;
 
@@ -13,11 +13,9 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
      * Constructor para crear un nuevo entrenador.
      *
      * @param nombre             El nombre del entrenador.
-     * @param fechaNacimiento    La fecha de nacimiento del entrenador.
-     * @param paisOrigen         El país de origen del entrenador.
-     * @param formacionPreferida La formación preferida del entrenador.
+     * @param formacionPreferida La formacion preferida del entrenador.
      */
-    public Entrenadores(String nombre, Formacion formacionPreferida) {
+    public Entrenadores(String nombre, formacion formacionPreferida) {
         super(nombre);
         this.formacionPreferida = formacionPreferida;
         this.traspaso = Traspaso.SIN_SOLICITAR;
@@ -119,20 +117,26 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
 
     /**
      * Obtiene la formación preferida del entrenador.
+     * 
+     * @return La formación preferida del entrenador.
      */
-    public Formacion getFormacionPreferida() {
+    public formacion getFormacionPreferida() {
         return formacionPreferida;
     }
 
     /**
      * Establece la formación preferida del entrenador.
+     * 
+     * @param formacionPreferida La formación preferida del entrenador.
      */
-    public void setFormacionPreferida(Formacion formacionPreferida) {
+    public void setFormacionPreferida(formacion formacionPreferida) {
         this.formacionPreferida = formacionPreferida;
     }
 
     /**
      * Obtiene el contador de entrenadores.
+     * 
+     * @return El contador de entrenadores.
      */
     public static int getContadorEntrenadores() {
         return contadorEntrenadores;
@@ -140,6 +144,8 @@ public class Entrenadores extends Trabajadores implements GestorTraspasos {
 
     /**
      * Contador de entrenadores
+     * 
+     * @param contadorEntrenadores El contador de entrenadores.
      */
     public static void setContadorEntrenadores(int contadorEntrenadores) {
         Entrenadores.contadorEntrenadores = contadorEntrenadores;
